@@ -1,5 +1,7 @@
 ﻿
-$(document).ready(function () {
+$(document).ready(function () {  
+  $("input[data-mask='cpf']").inputmask("mask", { "mask": "999.999.999-99" }, { reverse: true });
+
     $('#formCadastro').submit(function (e) {
         e.preventDefault();
         $.ajax({
