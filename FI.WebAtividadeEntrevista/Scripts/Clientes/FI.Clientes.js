@@ -34,8 +34,14 @@ $(document).ready(function () {
           },
         success:
           function (r) {
-            ModalDialog("Sucesso!", r)
-            $("#formCadastro")[0].reset();
+            if (r == "Digite um CPF válido.") {
+              ModalDialog("Erro", r);
+            }
+            else {
+              ModalDialog("Sucesso!", r);
+              $("#formCadastro")[0].reset();
+            }
+            
           }
       });
     }
